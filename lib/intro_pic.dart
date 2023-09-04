@@ -28,16 +28,21 @@ class _Shower extends State<InPic> {
           'assets/images/tmgyho.png',
           width: 200,
         ),
-        TextButton(
+        // TextButton(
+        //   onPressed: rollDice,
+        //   style: TextButton.styleFrom(
+        //     padding: const EdgeInsets.only(
+        //       top: 20,
+        //       bottom: 20,
+        //     ),
+        //     foregroundColor: Colors.white,
+        //     textStyle: const TextStyle(fontSize: 28),
+        //   ),
+        //   child: const Text('Are You Ready?'),
+        // )
+        OutlinedButton(
           onPressed: rollDice,
-          style: TextButton.styleFrom(
-            padding: const EdgeInsets.only(
-              top: 20,
-              bottom: 20,
-            ),
-            foregroundColor: Colors.white,
-            textStyle: const TextStyle(fontSize: 28),
-          ),
+          style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
           child: const Text('Are You Ready?'),
         )
       ],
