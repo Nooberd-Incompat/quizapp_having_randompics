@@ -5,7 +5,7 @@ class GradientContainer extends StatelessWidget {
   const GradientContainer(this.color1, this.color2, {super.key});
 
   const GradientContainer.purple({super.key})
-      : color1 = Colors.deepOrange,
+      : color1 = Colors.deepPurpleAccent,
         color2 = Colors.purpleAccent;
 
   final Color color1;
