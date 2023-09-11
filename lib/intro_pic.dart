@@ -24,26 +24,23 @@ class _Shower extends State<InPic> {
           "The Ultimate Quiz",
           style: TextStyle(color: Colors.white, fontSize: 40),
         ),
+        // Opacity(
+        //   opacity: 0.78,
+        //   child: Image.asset(
+        //     'assets/images/tmgyho.png',
+        //     width: 200,
+        //   ),
+        // ),
         Image.asset(
           'assets/images/tmgyho.png',
           width: 200,
+          //color: const Color.fromARGB(36, 255, 255, 255),
         ),
-        // TextButton(
-        //   onPressed: rollDice,
-        //   style: TextButton.styleFrom(
-        //     padding: const EdgeInsets.only(
-        //       top: 20,
-        //       bottom: 20,
-        //     ),
-        //     foregroundColor: Colors.white,
-        //     textStyle: const TextStyle(fontSize: 28),
-        //   ),
-        //   child: const Text('Are You Ready?'),
-        // )
-        OutlinedButton(
+        OutlinedButton.icon(
           onPressed: rollDice,
           style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-          child: const Text('Are You Ready?'),
+          icon: const Icon(Icons.arrow_right_rounded),
+          label: const Text('Are You Ready?'),
         )
       ],
     );
