@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
 
-class InPic extends StatefulWidget {
-  const InPic({super.key});
-  @override
-  State<InPic> createState() {
-    return _Shower();
-  }
-}
+class InPic extends StatelessWidget {
+  const InPic(this.startQuiz, {super.key});
 
-class _Shower extends State<InPic> {
-  void rollDice() {
-    setState(() {
-      const Text("Real");
-    });
-  }
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -37,12 +27,11 @@ class _Shower extends State<InPic> {
           //color: const Color.fromARGB(36, 255, 255, 255),
         ),
         OutlinedButton.icon(
-          onPressed: rollDice,
+          onPressed: startQuiz,
           style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
           icon: const Icon(Icons.arrow_right_rounded),
           label: const Text('Are You Ready?'),
         )
       ],
     );
-  }
-}
+  }}
