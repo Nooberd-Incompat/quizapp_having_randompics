@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/data/questions.dart';
 import 'package:quiz/questions_screen.dart';
 import 'package:quiz/intro_pic.dart';
 
@@ -16,6 +17,7 @@ class _QuizState extends State<Quiz> {
   // creating the activeScreen variable
 
   var activeScreen = 'intro-screen';
+  List<String> selectedAnswers = [];
 
   @override
   // void initState() {
@@ -27,6 +29,16 @@ class _QuizState extends State<Quiz> {
     setState(() {
       activeScreen = 'questions-screen';
     });
+  }
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        activeScreen = 'intro-screen';
+      });
+    }
   }
 
   Widget build(context) {
@@ -43,7 +55,7 @@ class _QuizState extends State<Quiz> {
           child: Center(
             child: activeScreen == 'intro-screen'
                 ? InPic(switchScreen)
-                : const QuestionsScreen(),
+                : QuestionsScreen(onSelectAnswer: chooseAnswer),
           ),
         ),
       ),
