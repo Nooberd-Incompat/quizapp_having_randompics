@@ -12,6 +12,21 @@ const questions = [
     ['Torno', 'Vikram', 'Aditya', 'Gugu gaga'],
   ),
   QuizQuestion(
+    "You have been kidnapped and stored in a bunker. How do you escape? ",
+    'assets/images/ayushbeingrap.jpg',
+    [
+      'Using Stockholm Syndrome',
+      'Maa ye maareeee',
+      'Sing Taylor Swift songs',
+      'Shout out loud'
+    ],
+  ),
+  QuizQuestion(
+    "A killer has jumped infront of you, holding a knife. What is the most appropriate thing to do?  ",
+    'assets/images/terminatorsocksy.jpg',
+    ['Stop the roleplay', 'Seduce', 'Call for help', 'Twerk'],
+  ),
+  QuizQuestion(
     "Mobile : Stand :: Bottle : ?",
     'assets/images/horshitlaughing.jpg',
     ['Flip', 'Fell', 'Drown', 'Water'],

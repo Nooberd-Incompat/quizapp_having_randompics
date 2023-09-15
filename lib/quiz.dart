@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz/data/questions.dart';
 import 'package:quiz/questions_screen.dart';
 import 'package:quiz/intro_pic.dart';
+import 'package:quiz/results_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -10,6 +11,10 @@ class Quiz extends StatefulWidget {
   State<Quiz> createState() {
     return _QuizState();
   }
+}
+
+void DummyFunction(String activeScreen){
+  
 }
 
 class _QuizState extends State<Quiz> {
@@ -36,7 +41,8 @@ class _QuizState extends State<Quiz> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = 'intro-screen';
+        //selectedAnswers= [];
+        activeScreen = 'results-screen';
       });
     }
   }
@@ -54,7 +60,11 @@ class _QuizState extends State<Quiz> {
           ),
           child: Center(
             child: activeScreen == 'intro-screen'
-                ? InPic(switchScreen)
+                ?  InPic(switchScreen)
+                activeScreen == 'results-screen'
+                    ? ResultsScreen(
+                        chosenAnswers: selectedAnswers,
+                      )
                 : QuestionsScreen(onSelectAnswer: chooseAnswer),
           ),
         ),
