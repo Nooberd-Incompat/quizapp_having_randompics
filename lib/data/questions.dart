@@ -9,7 +9,7 @@ const questions = [
   QuizQuestion(
     "If there are 9 lights, and you walk past a cat, what is the name of the satellite? ",
     'assets/images/OIP.jpeg',
-    ['Torno', 'Vikram', 'Aditya', 'Gugu gaga'],
+    ['Vikram', 'Torno', 'Aditya', 'Gugu gaga'],
   ),
   QuizQuestion(
     "You have been kidnapped and stored in a bunker. How do you escape? ",

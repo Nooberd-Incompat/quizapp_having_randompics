@@ -13,10 +13,6 @@ class Quiz extends StatefulWidget {
   }
 }
 
-void DummyFunction(String activeScreen){
-  
-}
-
 class _QuizState extends State<Quiz> {
   // Widget activeScreen = const InPic(switchScreen); here, we are initializing the method in the same time as we are
   // creating the activeScreen variable
@@ -47,7 +43,27 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  void restartQuiz(){
+    setState((){
+      selectedAnswers = [];
+      activeScreen = "Question_Screen";
+    });
+  }
+
   Widget build(context) {
+    Widget screenWidget = InPic(switchScreen);
+
+    if (activeScreen == "questions-screen") {
+      screenWidget = QuestionsScreen(
+        onSelectAnswer: chooseAnswer,
+      );
+    }
+    if (activeScreen == "results-screen") {
+      screenWidget = ResultsScreen(
+        chosenAnswers: selectedAnswers,
+        onRestart: restartQuiz,
+      );
+    }
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -59,13 +75,7 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           child: Center(
-            child: activeScreen == 'intro-screen'
-                ?  InPic(switchScreen)
-                activeScreen == 'results-screen'
-                    ? ResultsScreen(
-                        chosenAnswers: selectedAnswers,
-                      )
-                : QuestionsScreen(onSelectAnswer: chooseAnswer),
+            child: screenWidget,
           ),
         ),
       ),
