@@ -20,12 +20,6 @@ class _QuizState extends State<Quiz> {
   var activeScreen = 'intro-screen';
   List<String> selectedAnswers = [];
 
-  @override
-  // void initState() {
-  //   activeScreen = 'intro-screen';
-  //   super.initState();
-  // }
-
   void switchScreen() {
     setState(() {
       activeScreen = 'questions-screen';
@@ -43,8 +37,8 @@ class _QuizState extends State<Quiz> {
     }
   }
 
-  void restartQuiz(){
-    setState((){
+  void restartQuiz() {
+    setState(() {
       selectedAnswers = [];
       activeScreen = "Question_Screen";
     });
